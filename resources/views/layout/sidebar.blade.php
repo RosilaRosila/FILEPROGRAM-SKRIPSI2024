@@ -63,6 +63,15 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a href="http://127.0.0.1:8000/cek-tiket" class="nav-link active">
+                        <i class="nav-icon fa fa-database"></i>
+                        <p>
+                            Cek Tiket
+                        </p>
+                    </a>
+                </li>
+
 
                 <li class="nav-header">KELOLA LAPORAN</li>
                 <li class="nav-item">
@@ -73,7 +82,7 @@
                 </li>
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex"> </div>
                 <li class="nav-item ">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('logout') }}" class="nav-link">
                         <i class="nav-icon fa-solid fas fa-sign-out-alt"></i>
                         <p>
                             Logout

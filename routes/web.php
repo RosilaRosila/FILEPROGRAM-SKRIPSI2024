@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CekController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+
 
 
 
@@ -31,6 +34,11 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register-proses', [AuthController::class, 'register_proses'])->name('register-proses');
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+Route::get('/home', [CekController::class, 'home'])->name('view_home');
+
+Route::get('/cek-tiket', function () {
+    return view('cek-tiket');
 });

@@ -1,0 +1,63 @@
+/* .navbar-brand {
+    font-weight: bold;
+} */
+
+/* .nav-link:hover {
+    font-weight: bold;
+    font-size: 3vh;
+} */
+
+/* .active {
+    font-weight: bold;
+    font-size: 3vh;
+} */
+
+.image-header {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* .footer {
+    padding: 20px 0;
+    background-color: cadetblue;
+}
+
+.footer p {
+    font-size: 15px;
+    margin: 15px;
+    font-weight: bold;
+    text-align: center;
+} */
+
+
+
+/* --------------------------------------------------------------------------
+-------------------- MEDIA SREEN / TAMPILAN RESPONSIVE -------------------
+-------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1000px) {
+
+
+    .footer p {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+    }
+
+
+    .grid>article {
+        margin-bottom: 30px;
+    }
+
+}

@@ -47,7 +47,9 @@ class PermissionSeeder extends Seeder
         $role_ptiket->givePermissionTo($permission2);
 
         $user = User::find(1);
+        $user2 = User::find(2);
 
         $user->assignRole('admin');
+        $user2->assignRole('ptiket');
     }
 }

@@ -23,6 +23,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
+                @can('view_dashboard')
                 <li class="nav-header">DATABASE TEMPAT WISATA</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link active">
@@ -63,15 +64,6 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="http://127.0.0.1:8000/cek-tiket" class="nav-link active">
-                        <i class="nav-icon fa fa-database"></i>
-                        <p>
-                            Cek Tiket
-                        </p>
-                    </a>
-                </li>
-
 
                 <li class="nav-header">KELOLA LAPORAN</li>
                 <li class="nav-item">
@@ -89,6 +81,26 @@
                         </p>
                     </a>
                 </li>
+                @endcan
+
+                @can('view_home')
+                <li class="nav-item">
+                    <a href="http://127.0.0.1:8000/cek-tiket" class="nav-link active">
+                        <i class="nav-icon fa fa-database"></i>
+                        <p>
+                            Cek Tiket
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="{{ route('logout') }}" class="nav-link">
+                        <i class="nav-icon fa-solid fas fa-sign-out-alt"></i>
+                        <p>
+                            Logout
+                        </p>
+                    </a>
+                </li>
+                @endcan
             </ul>
 
         </nav>

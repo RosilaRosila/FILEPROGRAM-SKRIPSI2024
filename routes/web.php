@@ -5,6 +5,8 @@ use App\Http\Controllers\CekController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
+
 
 
 
@@ -41,4 +43,11 @@ Route::get('/home', [CekController::class, 'home'])->name('view_home');
 
 Route::get('/cek-tiket', function () {
     return view('cek-tiket');
+});
+
+
+Route::get('/home', [DashboardController::class, 'index']);
+
+Route::get('/coba', function () {
+    return view('halaman-pengunjung.info-wisata');
 });

@@ -15,7 +15,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function Info()
+    public function info()
     {
         // $blog_post = [];
         $title = "INFO WISATA";

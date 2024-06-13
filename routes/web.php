@@ -22,12 +22,13 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 /* ------------------ Route Halaman Login ------------------ */
+
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login-proses', [AuthController::class, 'login_proses'])->name('login-proses');
 
@@ -46,8 +47,6 @@ Route::get('/cek-tiket', function () {
 });
 
 
-Route::get('/home', [DashboardController::class, 'index']);
-
-Route::get('/coba', function () {
-    return view('halaman-pengunjung.info-wisata');
-});
+/* ------------------ Route Halaman Pengunjung atau Customer ------------------ */
+Route::get('/', [DashboardController::class, 'index']);
+Route::get('/info-wisata', [DashboardController::class, 'info']);

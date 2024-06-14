@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminDashboard;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CekController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+
 
 
 
@@ -41,6 +43,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/home', [CekController::class, 'home'])->name('view_home');
+Route::get('/data-wisata', [HomeController::class, 'dwisata'])->name('data-wisata');
 
 Route::get('/cek-tiket', function () {
     return view('cek-tiket');

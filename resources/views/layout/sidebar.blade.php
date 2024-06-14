@@ -24,9 +24,18 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                 @can('view_dashboard')
+                <li class="nav-item">
+                    <a href="http://127.0.0.1:8000/dashboard" class="nav-link {{ ($title === "DASHBOARD") ? 'active' : '' }} ">
+                        <i class=" nav-icon fas fa-tachometer-alt"></i>
+
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-header">DATABASE TEMPAT WISATA</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="http://127.0.0.1:8000/data-wisata" class="nav-link {{ ($title === "DATA WISATA") ? 'active' : '' }} ">
                         <i class="nav-icon fa fa-database"></i>
                         <p>
                             Data Wisata
@@ -34,7 +43,16 @@
                     </a>
                 </li>
 
-                <li class="nav-item has-treeview ">
+                <li class="nav-item">
+                    <a href="#" class="nav-link  ">
+                        <i class="nav-icon  fa fa-list-alt"></i>
+                        <p>
+                            Fasilitas
+                        </p>
+                    </a>
+                </li>
+
+                <!-- <li class="nav-item has-treeview ">
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fa fa-list-alt"></i>
                         <p>
@@ -62,7 +80,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
 
                 <li class="nav-header">KELOLA LAPORAN</li>

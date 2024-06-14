@@ -12,6 +12,17 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $title = "DASHBOARD";
+        return view('dashboard', [
+            'title' => $title,
+        ]);
+    }
+
+    public function dwisata()
+    {
+        $title = "DATA WISATA";
+        return view('data-wisata', [
+            'title' => $title,
+        ]);
     }
 }

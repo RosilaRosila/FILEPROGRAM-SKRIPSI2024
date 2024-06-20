@@ -44,10 +44,13 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/home', [CekController::class, 'home'])->name('view_home');
 Route::get('/data-wisata', [HomeController::class, 'dwisata'])->name('data-wisata');
+Route::get('/add-wisata', [HomeController::class, 'addwisata'])->name('addatawisata');
 
 Route::get('/cek-tiket', function () {
     return view('cek-tiket');
 });
+
+
 
 
 /* ------------------ Route Halaman Pengunjung atau Customer ------------------ */

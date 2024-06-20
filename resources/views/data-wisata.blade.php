@@ -184,13 +184,13 @@
                 <!-- Content Header (Page header) -->
                 <div class="content-header">
                     <div class="container-fluid">
-                        <div class="col-sm-6">
-                            <h4 class="m-0 text-dark">Kelola Data Wisata</h4>
-                        </div>
+                        <h4 class="m-0 text-dark">Kelola Data Wisata</h4>
                         <br>
                         <br>
                         <div class="text-end mb-5">
-                            <button href="" class="btn-primary">Tambah Data</button>
+                            <a class="btn btn-primary" href="http://127.0.0.1:8000/add-wisata">
+                                <i class=" nav-icon fas fa-plus">&nbsp Tambah Data</i>
+                            </a>
                         </div>
 
                         <section class="content">
@@ -207,7 +207,7 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tr style="text-align: center;">
+                                <tr>
                                     <td>1</td>
                                     <td>Nama Wisata</td>
                                     <td>Deskripsi</td>

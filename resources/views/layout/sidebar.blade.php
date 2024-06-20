@@ -27,7 +27,6 @@
                 <li class="nav-item">
                     <a href="http://127.0.0.1:8000/dashboard" class="nav-link {{ ($title === "DASHBOARD") ? 'active' : '' }} ">
                         <i class=" nav-icon fas fa-tachometer-alt"></i>
-
                         <p>
                             Dashboard
                         </p>

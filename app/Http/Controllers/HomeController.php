@@ -25,4 +25,12 @@ class HomeController extends Controller
             'title' => $title,
         ]);
     }
+
+    public function addwisata()
+    {
+        $title = "DATA WISATA";
+        return view('admin.addatawisata', [
+            'title' => $title,
+        ]);
+    }
 }

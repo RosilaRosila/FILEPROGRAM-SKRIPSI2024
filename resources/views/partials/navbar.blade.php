@@ -11,13 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item ">
-                <a class="nav-link {{ ($title === "DASHBOARD") ? 'active' : '' }}" href="http://127.0.0.1:8000/">Home</a>
+                <a class="nav-link {{ ($title === "DASHBOARD") ? 'active' : '' }} " href="http://127.0.0.1:8000/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ ($title === "INFO WISATA") ? 'active' : '' }}"" href=" http://127.0.0.1:8000/info-wisata">Info Wisata</a>
+                <a class="nav-link {{ ($title === "INFO WISATA") ? 'active' : '' }} " href=" http://127.0.0.1:8000/info-wisata">Info Wisata</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pesan Tiket</a>
+                <a class="nav-link {{ ($title === "PESAN TIKET") ? 'active' : '' }} " href="http://127.0.0.1:8000/pesan-tiket">Pesan Tiket</a>
             </li>
         </ul>
     </div>

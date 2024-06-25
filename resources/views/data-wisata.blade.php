@@ -215,9 +215,10 @@
                                     <td>Alamat</td>
                                     <td>Read More</td>
                                     <td>Alamat</td>
-                                    <td>
+                                    <td style="text-align: center;">
                                         <button class="btn btn-warning">Edit</button>
                                         <button class="btn btn-danger">Delete</button>
+                                        <button class="btn btn-success">Fasilitas</button>
                                     </td>
                                 </tr>
                                 <!-- 

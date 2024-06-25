@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function addwisata()
     {
         $title = "DATA WISATA";
-        return view('admin.addatawisata', [
+        return view('halaman-admin.addatawisata', [
             'title' => $title,
         ]);
     }

@@ -61,3 +61,4 @@ Route::get('/cek-tiket', function () {
 /* ------------------ Route Halaman Pengunjung atau Customer ------------------ */
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/info-wisata', [DashboardController::class, 'info']);
+Route::get('/pesan-tiket', [DashboardController::class, 'tiket']);

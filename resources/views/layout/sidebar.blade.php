@@ -34,7 +34,7 @@
                 </li>
                 <li class="nav-header">DATABASE TEMPAT WISATA</li>
                 <li class="nav-item">
-                    <a href="http://127.0.0.1:8000/data-wisata" class="nav-link {{ ($title === "DATA WISATA") ? 'active' : '' }} ">
+                    <a href="http://127.0.0.1:8000/admin/data-wisata" class="nav-link {{ ($title === "DATA WISATA") ? 'active' : '' }} ">
                         <i class="nav-icon fa fa-database"></i>
                         <p>
                             Data Wisata

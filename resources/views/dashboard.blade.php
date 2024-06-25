@@ -42,6 +42,9 @@
 
     <!-- Link Icon -->
     <link rel="shortcut icon" href="{{ asset('/') }}assets/img/logokp.png" />
+
+
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -69,6 +72,7 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+
 
     <!-- jQuery -->
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>

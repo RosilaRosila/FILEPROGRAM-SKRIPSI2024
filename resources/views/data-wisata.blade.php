@@ -188,13 +188,13 @@
                         <br>
                         <br>
                         <div class="text-end mb-5">
-                            <a class="btn btn-primary" href="http://127.0.0.1:8000/add-wisata">
+                            <a class="btn btn-primary" href="http://127.0.0.1:8000/admin/add-wisata">
                                 <i class=" nav-icon fas fa-plus">&nbsp Tambah Data</i>
                             </a>
                         </div>
 
                         <section class="content">
-                            <table class="table table-hover">
+                            <table class="table table-hover table-bordered">
                                 <thead class="table-primary">
                                     <tr style="text-align: center;">
                                         <th>No</th>

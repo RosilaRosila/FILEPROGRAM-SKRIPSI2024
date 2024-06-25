@@ -24,4 +24,14 @@ class DashboardController extends Controller
             // 'datawisatas' => DataWisata::all()
         ]);
     }
+
+    public function tiket()
+    {
+        // $blog_post = [];
+        $title = "PESAN TIKET";
+        return view('halaman-pengunjung.pesan-tiket', [
+            'title' => $title,
+            // 'datawisatas' => DataWisata::all()
+        ]);
+    }
 }

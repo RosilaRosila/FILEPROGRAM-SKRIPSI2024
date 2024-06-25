@@ -67,42 +67,42 @@ class AuthController extends Controller
 
     public function register_proses(Request $request)
     {
-        $request->validate([
-            'nama'  => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6'
-        ]);
-
-        $data['name']       = $request->nama;
-        $data['email']      = $request->email;
-        $data['password']   = Hash::make($request->password);
-
-        User::create($data);
-
-        $login = [
-            'email'     => $request->email,
-            'password'  => $request->password
-        ];
-
-        if (Auth::attempt($login)) {
-            return redirect()->route('admin.dashboard');
-        } else {
-            return redirect()->route('login')->with('failed', 'Email atau Password Salah');
-        }
-
-        // Validator::make($request->all(), [
-        //     'name' => 'required',
-        //     'email' => 'required|email',
-        //     'password' => 'required|confirmed'
-        // ])->validate();
-
-        // User::create([
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'password' => Hash::make($request->password)
+        // $request->validate([
+        //     'nama'  => 'required',
+        //     'email' => 'required|email|unique:users,email',
+        //     'password' => 'required|min:6'
         // ]);
 
-        // return redirect()->route('login');
+        // $data['name']       = $request->nama;
+        // $data['email']      = $request->email;
+        // $data['password']   = Hash::make($request->password);
+
+        // User::create($data);
+
+        // $login = [
+        //     'email'     => $request->email,
+        //     'password'  => $request->password
+        // ];
+
+        // if (Auth::attempt($login)) {
+        //     return redirect()->route('admin.dashboard');
+        // } else {
+        //     return redirect()->route('login')->with('failed', 'Email atau Password Salah');
+        // }
+
+        Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed'
+        ])->validate();
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
+
+        return redirect()->route('login');
 
         // if (Auth::attempt($login)) {
         //     return redirect()->route('admin.dashboard');

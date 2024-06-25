@@ -88,32 +88,32 @@
                         <br>
                         <form>
                             <div class="mb-3">
-                                <p for="exampleInputEmail1" class="form-label">Masukan Nama Tempat Wisata</p>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <p class="form-label">Masukan Nama Tempat Wisata</p>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>
                             <div class="mt-5">
-                                <p for="exampleInputEmail1" class="form-label">Tambahkan Gambar Profil Tempat Wisata</p>
-                                <input type="file" id="myFile" name="filename" class="form-control">
+                                <p class="form-label">Tambahkan Gambar Profil Tempat Wisata</p>
+                                <input type="file" name="image" class="form-control">
                             </div>
                             <div class="mt-5">
-                                <p for="exampleInputEmail1" class="form-label">Masukan Deskripsi Tempat Wisata</p>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                <p class="form-label">Masukan Deskripsi Tempat Wisata</p>
+                                <textarea type="text" class="form-control" id="exampleInputPassword1" style="height: 120px;"></textarea>
                             </div>
                             <div class="mt-5">
-                                <p for="exampleInputEmail1" class="form-label">Masukan Deskripsi Tempat Wisata (Read More)</p>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                <p class="form-label">Masukan Deskripsi Tempat Wisata (Read More)</p>
+                                <textarea type="text" class="form-control" id="exampleInputPassword1" style="height: 120px;"></textarea>
                             </div>
                             <div class="mt-5">
-                                <p for="exampleInputEmail1" class="form-label">Tambahkan Gambar Header Tempat Wisata</p>
-                                <input type="file" id="myFile" name="filename" class="form-control">
+                                <p class="form-label">Tambahkan Gambar Header Tempat Wisata</p>
+                                <input type="file" name="image" class="form-control">
                             </div>
                             <div class="mt-5">
-                                <p for="exampleInputEmail1" class="form-label">Masukan Alamat Tempat Wisata</p>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                <p class="form-label">Masukan Alamat Tempat Wisata</p>
+                                <textarea type="text" class="form-control" id="exampleInputPassword1" style="height: 60px;"></textarea>
                             </div>
                             <br>
                             <br>
-                            <button type="submit" class="btn btn-primary">Tambah Data</button>
+                            <button type="submit" class="btn btn-primary">Simpan Data</button>
                         </form>
 
 

@@ -11,7 +11,7 @@ class DataWisata extends Model
 
     protected $table = 'data_wisatas';
     protected $primarykey = 'id';
-    // protected $fillable = ['title', 'alamat', 'excerpt', 'body'];
+    protected $fillable = ['title', 'image', 'deskripsi', 'readmore', 'imgheader', 'alamat'];
 
     public $incrementing = false;
     public $timestamps = true;

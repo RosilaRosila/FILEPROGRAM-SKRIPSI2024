@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DataWisata;
+
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    //
+    // ---------- CONTROLLER HALAMAN PENGUNJUNG ----------
+
     public function index()
     {
         $title = "DASHBOARD";
@@ -21,7 +24,7 @@ class DashboardController extends Controller
         $title = "INFO WISATA";
         return view('halaman-pengunjung.info-wisata', [
             'title' => $title,
-            // 'datawisatas' => DataWisata::all()
+            'datawisatas' => DataWisata::all()
         ]);
     }
 

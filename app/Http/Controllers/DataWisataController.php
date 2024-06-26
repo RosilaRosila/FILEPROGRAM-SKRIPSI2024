@@ -14,6 +14,11 @@ class DataWisataController extends Controller
     public function index()
     {
         //
+        $title = "DATA WISATA";
+        return view('data-wisata', [
+            'title' => $title,
+            'datawisatas' => DataWisata::all()
+        ]);
     }
 
     /**

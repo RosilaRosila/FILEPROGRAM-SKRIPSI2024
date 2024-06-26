@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    //
+    /* ---------- HALAMAN SIDEBAR ADMIN ---------- */
 
+    /* -------- MENU DASHBOARD -------- */
     public function dashboard()
     {
         $title = "DASHBOARD";
@@ -18,6 +19,7 @@ class HomeController extends Controller
         ]);
     }
 
+    /* -------- MENU DATA WISATA -------- */
     public function dwisata()
     {
         $title = "DATA WISATA";
@@ -29,7 +31,7 @@ class HomeController extends Controller
     public function addwisata()
     {
         $title = "DATA WISATA";
-        return view('halaman-admin.addatawisata', [
+        return view('admin.addatawisata', [
             'title' => $title,
         ]);
     }

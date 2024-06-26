@@ -7,11 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
-
-
-
-
-
+use App\Http\Controllers\DataWisataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,8 +39,10 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-    Route::get('/data-wisata', [HomeController::class, 'dwisata'])->name('dwisata');
+    Route::get('/data-wisata', [DataWisataController::class, 'index'])->name('data-wisata');
     Route::get('/add-wisata', [HomeController::class, 'addwisata'])->name('addatawisata');
+
+    // Route::resource('admin', DataWisataController::class);
 });
 
 

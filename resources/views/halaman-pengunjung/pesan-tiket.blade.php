@@ -19,32 +19,41 @@
                         <br>
                         <form class="user">
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Masukan Nama Lengkap">
+                                <label for="txtname" class="form-label">Masukan Nama Lengkap Anda</label>
+                                <input type="text" class="form-control form-control" id="txtname" placeholder="Nama Lengkap" name="name">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Pilih Tempat Wisata">
+                                <label for="txttiket" class="form-label">Pilih Tiket Wisata</label>
+                                <select name="tiket" class="form-control" id="txttiket">
+                                    <option value="" selected>Tiket Wisata</option>
+                                    <option value="1">1. Pantai Pangandaran</option>
+                                    <option value="2">2. Mobil</option>
+                                    <option value="3">3. Bus</option>
+                                </select>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="number" class="form-control" id="exampleInputPassword" placeholder="Masukan Jumlah Orang">
+                                    <label for="txtjumlah" class="form-label">Masukan Jumlah Orang</label>
+                                    <input type="number" class="form-control" id="txtjumlah" placeholder="Jumlah Orang" name="txtjumlah">
                                 </div>
                                 <div class="col-sm-6">
-                                    <select name="kendaraan" class="form-control">
-                                        <option value="">Pilih Jenis Kendaraan</option>
-                                        <option value="motor">1. Motor</option>
-                                        <option value="mobil">2. Mobil</option>
-                                        <option value="bus">3. Bus</option>
+                                    <label for="txtkendaraan" class="form-label">Pilih Jenis Kendaraan</label>
+                                    <select name="kendaraan" class="form-control" id="txtkendaraan">
+                                        <option value="" selected>Kendaraan</option>
+                                        <option value="1">1. Motor</option>
+                                        <option value="2">2. Mobil</option>
+                                        <option value="3">3. Bus</option>
                                     </select>
 
                                 </div>
                             </div>
-
+                            <div class="form-group">
+                                <label for="txtplat" class="form-label">Masukan Plat Kendaraan Anda</label>
+                                <input type="text" class="form-control form-control" id="txtplat" placeholder="Z 1234 UC" name="txtplat">
+                            </div>
                             <div class="form-group mt-4">
-                                <label>Masukan Tanggal Liburan</label>
-                                <input type="date" name="tgl" class="form-control">
+                                <label for="txttanggal" class="form-label">Masukan Tanggal Liburan (Kunjungan)</label>
+                                <input type="date" name="tgl" class="form-control" id="txttanggal">
                             </div>
                             <br>
                             <a href="login.html" class="btn btn-primary btn-user btn-block">

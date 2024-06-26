@@ -188,8 +188,11 @@
                         <br>
                         <br>
                         <div class="text-end mb-5">
-                            <a class="btn btn-primary" href="http://127.0.0.1:8000/admin/add-wisata">
-                                <i class=" nav-icon fas fa-plus">&nbsp Tambah Data</i>
+                            <!-- <button type="button" class="btn btn-sm btn-primary">
+                                <i class="fas fa-plus-circle"></i>Tambah Data
+                            </button> -->
+                            <a class="btn btn-primary " href="http://127.0.0.1:8000/admin/add-wisata">
+                                <i class=" nav-icon fas fa-plus-circle"></i>&nbsp Tambah Data
                             </a>
                         </div>
 
@@ -197,30 +200,35 @@
                             <table class="table table-hover table-bordered">
                                 <thead class="table-primary">
                                     <tr style="text-align: center;">
-                                        <th>No</th>
-                                        <th>Nama Wisata</th>
-                                        <th>Image</th>
-                                        <th>Deskripsi</th>
-                                        <th>Read More</th>
-                                        <th>Image Header</th>
-                                        <th>Alamat</th>
-                                        <th>Action</th>
+                                        <th style="font-size: 12px;">No</th>
+                                        <th style="font-size: 12px;">Nama Wisata</th>
+                                        <th style="font-size: 12px; ">Image</th>
+                                        <th style="font-size: 12px; width:150px">Deskripsi</th>
+                                        <th style="font-size: 12px; width:200px">Read More</th>
+                                        <th style="font-size: 12px;">Image Header</th>
+                                        <th style="font-size: 12px; width:30px">Alamat</th>
+                                        <th style="font-size: 12px; width:210px">Action</th>
                                     </tr>
                                 </thead>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Nama Wisata</td>
-                                    <td>Deskripsi</td>
-                                    <td>Read More</td>
-                                    <td>Alamat</td>
-                                    <td>Read More</td>
-                                    <td>Alamat</td>
-                                    <td style="text-align: center;">
-                                        <button class="btn btn-warning">Edit</button>
-                                        <button class="btn btn-danger">Delete</button>
-                                        <button class="btn btn-success">Fasilitas</button>
-                                    </td>
-                                </tr>
+                                <tbody>
+                                    @foreach($datawisatas as $dwisata)
+                                    <tr>
+                                        <th style="font-size: 10px;">{{ $loop->iteration }}</th>
+                                        <td style="font-size: 10px;">{{ $dwisata->title }}</td>
+                                        <td>{{ $dwisata->image }}</td>
+                                        <td style="font-size: 10px;">{{ $dwisata->deskripsi }}</td>
+                                        <td style="font-size: 10px;">{{ $dwisata->readmore }}</td>
+                                        <td>{{ $dwisata->imgheader }}</td>
+                                        <td style="font-size: 10px;">{{ $dwisata->alamat }}</td>
+                                        <td style="text-align: center;">
+                                            <button class="btn btn-warning" style="font-size:12px">Edit</button>
+                                            <button class="btn btn-danger" style="font-size:12px">Delete</button>
+                                            <button class="btn btn-success" style="font-size:12px">Fasilitas</button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+
+                                </tbody>
                                 <!-- 
                                 <tr>
                                     <td colspan="8">Tidak Ada Data</td>

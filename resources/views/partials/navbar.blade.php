@@ -19,6 +19,9 @@
             <li class="nav-item">
                 <a class="nav-link {{ ($title === "PESAN TIKET") ? 'active' : '' }} " href="http://127.0.0.1:8000/pesan-tiket">Pesan Tiket</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ ($title === "") ? 'active' : '' }} " href="">Ulasan</a>
+            </li>
         </ul>
     </div>
 </nav>

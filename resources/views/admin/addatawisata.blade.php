@@ -86,33 +86,36 @@
                         <h5 class="m-0 text-dark" style="font-weight: bold;">Tambah Data Wisata</h5>
                         <br>
                         <br>
-                        <form>
+                        <form method="post" action="">
                             <div class="mb-3">
-                                <p class="form-label">Masukan Nama Tempat Wisata</p>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <label for="txtname" class="form-label" style=" font-weight:normal">Masukan Nama Tempat Wisata</label>
+                                <input type="text" class="form-control" id="txtname" name="txtname">
                             </div>
                             <div class="mt-5">
-                                <p class="form-label">Tambahkan Gambar Profil Tempat Wisata</p>
-                                <input type="file" name="image" class="form-control">
+                                <label for="txtimage" class="form-label" style=" font-weight:normal">Tambahkan Gambar Profil Tempat Wisata</label>
+                                <input type="file" name="txtimage" id="txtimage" class="form-control">
                             </div>
                             <div class="mt-5">
-                                <p class="form-label">Masukan Deskripsi Tempat Wisata</p>
-                                <textarea type="text" class="form-control" id="exampleInputPassword1" style="height: 120px;"></textarea>
+                                <label for="txtdeskripsi" class="form-label" style=" font-weight:normal">Masukan Deskripsi Tempat Wisata</label>
+                                <textarea type="text" class="form-control" id="txtdeskripsi" style="height: 120px;" name="txtdeskripsi"></textarea>
                             </div>
                             <div class="mt-5">
-                                <p class="form-label">Masukan Deskripsi Tempat Wisata (Read More)</p>
-                                <textarea type="text" class="form-control" id="exampleInputPassword1" style="height: 120px;"></textarea>
+                                <label for="txtreadmore" class="form-label" style=" font-weight:normal">Masukan Deskripsi Tempat Wisata (Read More)</label>
+                                <textarea type="text" class="form-control" id="txtreadmore" style="height: 120px;" name="txtreadmore"></textarea>
                             </div>
                             <div class="mt-5">
-                                <p class="form-label">Tambahkan Gambar Header Tempat Wisata</p>
-                                <input type="file" name="image" class="form-control">
+                                <label for="txtimgheader" class="form-label" style=" font-weight:normal">Tambahkan Gambar Header Tempat Wisata</label>
+                                <input type="file" name="txtimgheader" id="txtimgheader" class="form-control">
                             </div>
                             <div class="mt-5">
-                                <p class="form-label">Masukan Alamat Tempat Wisata</p>
-                                <textarea type="text" class="form-control" id="exampleInputPassword1" style="height: 60px;"></textarea>
+                                <label for="txtalamat" class="form-label" style=" font-weight:normal">Masukan Alamat Tempat Wisata</label>
+                                <textarea type="text" class="form-control" id="txtalamat" style="height: 60px;" name="txtalamat"></textarea>
                             </div>
                             <br>
                             <br>
+                            <a class="btn btn-warning " href="http://127.0.0.1:8000/admin/data-wisata" style="color: white;">
+                                Kembali
+                            </a>
                             <button type="submit" class="btn btn-primary">Simpan Data</button>
                         </form>
 

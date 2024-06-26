@@ -25,7 +25,7 @@
                     with font-awesome or any other icon font library -->
                 @can('view_dashboard')
                 <li class="nav-item">
-                    <a href="http://127.0.0.1:8000/dashboard" class="nav-link {{ ($title === "DASHBOARD") ? 'active' : '' }} ">
+                    <a href="http://127.0.0.1:8000/admin/dashboard" class="nav-link {{ ($title === "DASHBOARD") ? 'active' : '' }} ">
                         <i class=" nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -47,6 +47,15 @@
                         <i class="nav-icon  fa fa-list-alt"></i>
                         <p>
                             Fasilitas
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link  ">
+                        <i class="nav-icon  fas fa-wallet"></i>
+                        <p>
+                            Harga Tiket
                         </p>
                     </a>
                 </li>

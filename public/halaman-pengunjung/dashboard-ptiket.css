@@ -141,4 +141,8 @@
         height: 1200px;
     }
 
+    label {
+        font-size: 10px;
+    }
+
 }

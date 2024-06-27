@@ -184,15 +184,15 @@
                 <!-- Content Header (Page header) -->
                 <div class="content-header">
                     <div class="container-fluid">
-                        <h4 class="m-0 text-dark">Kelola Data Wisata</h4>
+                        <h4 class="m-0 text-dark">Kelola Fasilitas</h4>
                         <br>
                         <br>
                         <div class="text-end mb-5">
                             <!-- <button type="button" class="btn btn-sm btn-primary">
                                 <i class="fas fa-plus-circle"></i>Tambah Data
                             </button> -->
-                            <a class="btn btn-primary " href="{{ route('admin.admin_addatawisata') }}">
-                                <i class=" nav-icon fas fa-plus-circle"></i>&nbsp Tambah Data
+                            <a class="btn btn-primary " href="{{ route('admin.admin_add_fasilitas') }}">
+                                <i class=" nav-icon fas fa-plus-circle"></i>&nbsp Tambah Fasilitas
                             </a>
                         </div>
 
@@ -200,41 +200,30 @@
                             <table class="table table-hover table-bordered">
                                 <thead class="table-primary">
                                     <tr style="text-align: center;">
-                                        <th style="font-size: 12px;">No</th>
-                                        <th style="font-size: 12px;">Nama Wisata</th>
-                                        <th style="font-size: 12px; ">Image</th>
-                                        <th style="font-size: 12px; width:150px">Deskripsi</th>
-                                        <th style="font-size: 12px; width:200px">Read More</th>
-                                        <th style="font-size: 12px;">Image Header</th>
-                                        <th style="font-size: 12px; width:30px">Alamat</th>
-                                        <th style="font-size: 12px; width:190px">Action</th>
+                                        <th>No</th>
+                                        <th>Icon</th>
+                                        <th>Nama Icon</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if($datawisatas->count() > 0)
-                                    @foreach($datawisatas as $dwisata)
+                                    @if($fasilitas->count() > 0)
+                                    @foreach($fasilitas as $fs)
                                     <tr>
-                                        <th style="font-size: 10px;">{{ $loop->iteration }}</th>
-                                        <td style="font-size: 10px;">{{ $dwisata->title }}</td>
+                                        <th>{{ $loop->iteration }}</th>
                                         <td>
-                                            <img src="{{ asset('uploads/'.$dwisata->image) }}" alt="" height="50px">
+                                            <img src="{{ asset('icons/'.$fs->image) }}" alt="" height="50px">
                                         </td>
-                                        <td style="font-size: 10px;">{{ $dwisata->deskripsi }}</td>
-                                        <td style="font-size: 10px;">{{ $dwisata->readmore }}</td>
-                                        <td>
-                                            <img src="{{ asset('uploads/'.$dwisata->imgheader) }}" alt="" height="20px">
-                                        </td>
-                                        <td style="font-size: 10px;">{{ $dwisata->alamat }}</td>
+                                        <td>{{ $fs->title }}</td>
                                         <td style="text-align: center;">
-                                            <a href="{{ route('admin.admin_editdatawisata', $dwisata->id) }}" class=" btn btn-warning btn-sm" style="font-size:12px">Edit</a>
-                                            <a href="{{ route('admin.admin_deletedatawisata', $dwisata->id) }}" class="btn btn-danger btn-sm" style="font-size:12px">Delete</a>
-                                            <a href="" class="btn btn-success btn-sm" style="font-size:12px">Fasilitas</a>
+                                            <a href="" class=" btn btn-warning">Edit</a>
+                                            <a href="" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach
                                     @else
                                     <tr>
-                                        <td class="text-center" colspan="7">Data Belum Tersedia</td>
+                                        <td class="text-center" colspan="4">Data Belum Tersedia</td>
                                     </tr>
                                     @endif
 

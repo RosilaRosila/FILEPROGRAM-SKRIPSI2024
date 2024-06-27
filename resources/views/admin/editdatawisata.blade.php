@@ -85,42 +85,55 @@
                         <br>
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="m-0 text-dark" style="font-weight: bold;">Tambah Data Wisata</h5>
+                                <h5 class="m-0 text-dark" style="font-weight: bold;">Edit Data Wisata</h5>
                             </div>
                             <div class="card-body">
                                 <br>
-                                <form action="{{ route('admin.store') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('admin.admin_updatedatawisata', $datawisatas->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3">
                                         <label for="txtname" class="form-label" style=" font-weight:normal">Masukan Nama Tempat Wisata</label>
-                                        <input type="text" class="form-control" id="txtname" name="title" value="{{ old('title') }}">
+                                        <input type="text" class="form-control" id="txtname" name="title" value="{{ $datawisatas->title}}">
                                     </div>
                                     <div class="mt-5">
-                                        <label for="txtimage" class="form-label" style=" font-weight:normal">Tambahkan Gambar Profil Tempat Wisata</label>
+                                        <label class="form-label" style=" font-weight:normal">Existing Gambar Profil Tempat Wisata</label>
+                                        <div class="form-control" style="height: 70px;">
+                                            <img src="{{ asset('uploads/'.$datawisatas->image) }}" alt="" height="50px">
+                                        </div>
+
+                                    </div>
+                                    <div class="mt-5">
+                                        <label for="txtimage" class="form-label" style=" font-weight:normal">Change Gambar Profil Tempat Wisata</label>
                                         <input type="file" name="image" id="txtimage" class="form-control">
                                     </div>
                                     <div class="mt-5">
                                         <label for="txtdeskripsi" class="form-label" style=" font-weight:normal">Masukan Deskripsi Tempat Wisata</label>
-                                        <textarea type="text" class="form-control" id="txtdeskripsi" style="height: 120px;" name="deskripsi">{{ old('deskripsi') }}</textarea>
+                                        <textarea type="text" class="form-control" id="txtdeskripsi" style="height: 120px;" name="deskripsi">{{ $datawisatas->deskripsi }}</textarea>
                                     </div>
                                     <div class="mt-5">
                                         <label for="txtreadmore" class="form-label" style=" font-weight:normal">Masukan Deskripsi Tempat Wisata (Read More)</label>
-                                        <textarea type="text" class="form-control" id="txtreadmore" style="height: 120px;" name="readmore">{{ old('readmore') }}</textarea>
+                                        <textarea type="text" class="form-control" id="txtreadmore" style="height: 120px;" name="readmore">{{ $datawisatas->readmore }}</textarea>
                                     </div>
                                     <div class="mt-5">
-                                        <label for="txtimgheader" class="form-label" style=" font-weight:normal">Tambahkan Gambar Header Tempat Wisata</label>
+                                        <label class="form-label" style=" font-weight:normal">Existing Gambar Header Tempat Wisata</label>
+                                        <div class="form-control" style="height: 70px;">
+                                            <img src="{{ asset('uploads/'.$datawisatas->imgheader) }}" alt="" height="50px">
+                                        </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <label for="txtimgheader" class="form-label" style=" font-weight:normal">Change Gambar Header Tempat Wisata</label>
                                         <input type="file" name="imgheader" id="txtimgheader" class="form-control">
                                     </div>
                                     <div class="mt-5">
                                         <label for="txtalamat" class="form-label" style=" font-weight:normal">Masukan Alamat Tempat Wisata</label>
-                                        <textarea type="text" class="form-control" id="txtalamat" style="height: 60px;" name="alamat">{{ old('txtalamat') }}</textarea>
+                                        <textarea type="text" class="form-control" id="txtalamat" style="height: 60px;" name="alamat">{{ $datawisatas->alamat }}</textarea>
                                     </div>
                                     <br>
                                     <br>
-                                    <a class="btn btn-warning " href="http://127.0.0.1:8000/admin/data-wisata" style="color: white;">
+                                    <a class="btn btn-danger " href="{{ route('admin.admin_data_wisata') }}" style="color: white;">
                                         Kembali
                                     </a>
-                                    <button type="submit" class="btn btn-primary">Simpan Data</button>
+                                    <button type="submit" class="btn btn-primary">Update Data</button>
                                 </form>
 
                                 <br>

@@ -43,13 +43,22 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link  ">
-                        <i class="nav-icon  fa fa-list-alt"></i>
+                    <a href="http://127.0.0.1:8000/admin/data-fasilitas" class="nav-link {{ ($title === "FASILITAS") ? 'active' : '' }} ">
+                        <i class="nav-icon fa fa-list-alt"></i>
                         <p>
                             Fasilitas
                         </p>
                     </a>
                 </li>
+
+                <!-- <li class="nav-item">
+                    <a href="http://127.0.0.1:8000/admin/data-wisata" class="nav-link  {{ ($title === "FASILITAS") ? 'active' : '' }} ">
+                        <i class="nav-icon  fa fa-list-alt"></i>
+                        <p>
+                            Fasilitas
+                        </p>
+                    </a>
+                </li> -->
 
                 <li class="nav-item">
                     <a href="#" class="nav-link  ">

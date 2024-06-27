@@ -28,11 +28,11 @@ class HomeController extends Controller
         ]);
     }
 
-    public function addwisata()
-    {
-        $title = "DATA WISATA";
-        return view('admin.addatawisata', [
-            'title' => $title,
-        ]);
-    }
+    // public function addwisata()
+    // {
+    //     $title = "DATA WISATA";
+    //     return view('admin.addatawisata', [
+    //         'title' => $title,
+    //     ]);
+    // }
 }

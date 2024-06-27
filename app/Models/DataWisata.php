@@ -9,10 +9,10 @@ class DataWisata extends Model
 {
     use HasFactory;
 
-    protected $table = 'data_wisatas';
-    protected $primarykey = 'id';
-    protected $fillable = ['title', 'image', 'deskripsi', 'readmore', 'imgheader', 'alamat'];
+    // protected $table = 'data_wisatas';
+    // protected $primarykey = 'id';
+    // protected $fillable = ['title', 'image', 'deskripsi', 'readmore', 'imgheader', 'alamat'];
 
-    public $incrementing = false;
-    public $timestamps = true;
+    // public $incrementing = false;
+    // public $timestamps = true;
 }

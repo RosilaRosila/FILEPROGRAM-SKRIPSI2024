@@ -54,6 +54,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     /* ------------ Create, Read, Update & Delete Data Wisata ------------ */
     Route::get('/fasilitas/add-fasilitas', [FasilitasController::class, 'create'])->name('admin_add_fasilitas');
 
+
     /* ------------ Create, Read, Update & Delete Data Wisata ------------ */
     Route::get('/datawisata/add-wisata', [DataWisataController::class, 'create'])->name('admin_addatawisata');
     Route::post('/datawisata/store', [DataWisataController::class, 'store'])->name('store');

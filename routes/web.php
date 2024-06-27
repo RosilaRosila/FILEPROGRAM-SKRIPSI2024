@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataWisataController;
+use App\Http\Controllers\FasilitasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,11 +39,29 @@ Route::post('/register-proses', [AuthController::class, 'register_proses'])->nam
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], function () {
-    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-    Route::get('/data-wisata', [DataWisataController::class, 'index'])->name('data-wisata');
-    Route::get('/add-wisata', [HomeController::class, 'addwisata'])->name('addatawisata');
 
-    // Route::resource('admin', DataWisataController::class);
+    /* ------------------------- Menu Sidebar ( Menu Admin ) ------------------------- */
+
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    Route::get('/data-wisata', [DataWisataController::class, 'index'])->name('admin_data_wisata');
+
+
+    // Route::post('/create', 'DataWisataController@store');
+
+    /* ------------------------------ Menu Fasilitas ------------------------------ */
+    Route::resource('fasilitas', FasilitasController::class);
+    Route::get('/data-fasilitas', [FasilitasController::class, 'index'])->name('admin_data_fasilitas');
+    /* ------------ Create, Read, Update & Delete Data Wisata ------------ */
+    Route::get('/fasilitas/add-fasilitas', [FasilitasController::class, 'create'])->name('admin_add_fasilitas');
+
+    /* ------------ Create, Read, Update & Delete Data Wisata ------------ */
+    Route::get('/datawisata/add-wisata', [DataWisataController::class, 'create'])->name('admin_addatawisata');
+    Route::post('/datawisata/store', [DataWisataController::class, 'store'])->name('store');
+    Route::get('/datawisata/delete/{id}', [DataWisataController::class, 'delete'])->name('admin_deletedatawisata');
+    Route::get('/datawisata/edit/{id}', [DataWisataController::class, 'edit'])->name('admin_editdatawisata');
+    // Route::post('/datawisata/update/{id}', 'DataWisataController@update');
+    Route::post('/datawisata/update/{id}', [DataWisataController::class, 'update'])->name('admin_updatedatawisata');
+    Route::resource('datawisata', DataWisataController::class);
 });
 
 

@@ -33,7 +33,7 @@ class FasilitasController extends Controller
     public function create()
     {
         //
-        $title = "FASILITAS";
+        $title = "DATA WISATA";
         return view('admin.addfasilitas', [
             'title' => $title,
         ]);

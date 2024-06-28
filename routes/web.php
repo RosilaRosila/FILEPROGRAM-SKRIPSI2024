@@ -43,16 +43,23 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     /* ------------------------- Menu Sidebar ( Menu Admin ) ------------------------- */
 
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-    Route::get('/data-wisata', [DataWisataController::class, 'index'])->name('admin_data_wisata');
+    Route::get('/data-tiket', [HomeController::class, 'dtiket'])->name('data-tiket');
+    Route::get('/data-wisata', [HomeController::class, 'dwisata'])->name('data-wisata');
+    Route::get('/data-fasilitas', [HomeController::class, 'dfasilitas'])->name('data-fasilitas');
 
 
     // Route::post('/create', 'DataWisataController@store');
 
     /* ------------------------------ Menu Fasilitas ------------------------------ */
     Route::resource('fasilitas', FasilitasController::class);
-    Route::get('/data-fasilitas', [FasilitasController::class, 'index'])->name('admin_data_fasilitas');
+    // Route::get('/data-fasilitas', [FasilitasController::class, 'index'])->name('admin_data_fasilitas');
     /* ------------ Create, Read, Update & Delete Data Wisata ------------ */
-    Route::get('/fasilitas/add-fasilitas', [FasilitasController::class, 'create'])->name('admin_add_fasilitas');
+    Route::get('/fasilitas/create', [FasilitasController::class, 'create'])->name('admin_fasilitas_create');
+    Route::post('/fasilitas/store', [FasilitasController::class, 'store'])->name('admin_fasilitas_store');
+    Route::get('/fasilitas/edit/{id}', [FasilitasController::class, 'edit'])->name('admin_fasilitas_edit');
+    Route::post('/fasilitas/update/{id}', [FasilitasController::class, 'update'])->name('admin_fasilitas_update');
+    Route::get('/fasilitas/delete/{id}', [FasilitasController::class, 'delete'])->name('admin_fasilitas_delete');
+
 
 
     /* ------------ Create, Read, Update & Delete Data Wisata ------------ */
@@ -77,6 +84,7 @@ Route::get('/cek-tiket', function () {
 
 
 /* ------------------ Route Halaman Pengunjung atau Customer ------------------ */
-Route::get('/', [DashboardController::class, 'index']);
-Route::get('/info-wisata', [DashboardController::class, 'info']);
-Route::get('/pesan-tiket', [DashboardController::class, 'tiket']);
+Route::get('/', [DashboardController::class, 'index'])->name('home');
+Route::get('/info-wisata', [DashboardController::class, 'info'])->name('info-wisata');
+Route::get('/pesan-tiket', [DashboardController::class, 'tiket'])->name('pesan-tiket');
+Route::get('/info-wisata/detail/{id}', [DashboardController::class, 'detail'])->name('pengunjung_detail_wisata');

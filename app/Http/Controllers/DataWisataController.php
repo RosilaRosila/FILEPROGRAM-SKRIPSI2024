@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\DataWisata;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreDataWisataRequest;
 use App\Http\Requests\UpdateDataWisataRequest;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -20,11 +22,6 @@ class DataWisataController extends Controller
     public function index()
     {
         //
-        $title = "DATA WISATA";
-        return view('data-wisata', [
-            'title' => $title,
-            'datawisatas' => DataWisata::all()
-        ]);
     }
 
     /**
@@ -47,41 +44,50 @@ class DataWisataController extends Controller
         //
         $request->validate([
             'title' => 'required',
-            'image' => 'required|image|mimes:jpg,jpeg,png,gif',
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif,webp',
             'deskripsi' => 'required',
             'readmore' => 'required',
-            'imgheader' => 'required|image|mimes:jpg,jpeg,png,gif',
+            'imgheader' => 'required|image|mimes:jpg,jpeg,png,gif,webp',
             'alamat' => 'required',
         ]);
 
-        $ext = $request->file('image')->extension();
-        $final_name = time() . '.' . $ext;
-        $request->file('image')->move(public_path('uploads/'), $final_name);
+        /* ----- Filename Image ----- */
+        $ext = Null;
+        $final_name = Null;
 
-        $extimg = $request->file('imgheader')->extension();
-        $final_img = time() . '.' . $extimg;
-        $request->file('imgheader')->move(public_path('uploads/'), $final_img);
+        if ($request->has('image')) {
+            $file_img = $request->file('image');
+            $extention_img = $file_img->getClientOriginalExtension();
+            $ext = time() . '.' . $extention_img;
 
-        $obj = new DataWisata();
-        $obj->title = $request->title;
-        $obj->image = $final_name;
-        $obj->deskripsi = $request->deskripsi;
-        $obj->readmore = $request->readmore;
-        $obj->imgheader = $final_img;
-        $obj->alamat = $request->alamat;
-        $obj->save();
+            $final_name = 'uploads/';
+            $file_img->move($final_name, $ext);
+        }
 
-        // DataWisata::create([
-        //     'title' => $request->title,
-        //     'image' => $final_name,
-        //     'deskripsi' => $request->deskripsi,
-        //     'readmore' => $request->readmore,
-        //     'imgheader' => $final_img,
-        //     'alamat' => $request->alamat,
-        // ]);
+        /* ----- Filename Image Header ----- */
+        $ext_hdr = Null;
+        $final_hdr = Null;
+
+        if ($request->has('imgheader')) {
+            $file_hdr = $request->file('imgheader');
+            $extention_hdr = $file_hdr->getClientOriginalExtension();
+            $ext_hdr = time() . '.' . $extention_hdr;
+
+            $final_hdr = 'uploads/';
+            $file_hdr->move($final_hdr, $ext_hdr);
+        }
+
+        DataWisata::create([
+            'title' => $request->title,
+            'image' => $final_name . $ext,
+            'deskripsi' => $request->deskripsi,
+            'readmore' => $request->readmore,
+            'imgheader' => $final_hdr . $ext_hdr,
+            'alamat' => $request->alamat,
+        ]);
 
         // return redirect()->route('admin.admin_data_wisata')->with('success', 'Data Berhasil Ditambahkan');
-        return redirect()->route('admin.admin_data_wisata')->with('success', 'Data Berhasil Ditambahkan');
+        return redirect()->route('admin.data-wisata')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -112,34 +118,56 @@ class DataWisataController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $obj = DataWisata::where('id', $id)->first();
-        if ($request->hasFile('image', 'imgheader')) {
-            $request->validate([
-                'image' => 'image|mimes:jpg,jpeg,png,gif',
-                'imgheader' => 'image|mimes:jpg,jpeg,png,gif'
-            ]);
-            unlink(public_path('uploads/' . $obj->image,));
-            unlink(public_path('uploads/' . $obj->imgheader));
-            $ext = $request->file('image')->extension();
-            $extimg = $request->file('imgheader')->extension();
-            $final_name = time() . '.' . $ext;
-            $final_img = time() . '.' . $extimg;
-            $request->file('image')->move(public_path('uploads/'), $final_name);
-            $request->file('imgheader')->move(public_path('uploads/'), $final_img);
-            $obj->image = $final_name;
-            $obj->imgheader = $final_img;
+
+        $request->validate([
+            'title' => 'required',
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif,webp',
+            'deskripsi' => 'required',
+            'readmore' => 'required',
+            'imgheader' => 'required|image|mimes:jpg,jpeg,png,gif,webp',
+            'alamat' => 'required',
+        ]);
+
+        $datawisatas = DataWisata::where('id', $id)->first();
+
+        if ($request->has('image')) {
+            $file_img = $request->file('image');
+            $extention_img = $file_img->getClientOriginalExtension();
+            $ext = time() . '.' . $extention_img;
+
+            $final_name = 'uploads/';
+            $file_img->move($final_name, $ext);
+
+            if (File::exists($datawisatas->image)) {
+                File::delete($datawisatas->image);
+            }
         }
 
-        $obj->title = $request->title;
-        // $obj->image = $final_name;
-        $obj->deskripsi = $request->deskripsi;
-        $obj->readmore = $request->readmore;
-        // $obj->imgheader = $final_img;
-        $obj->alamat = $request->alamat;
-        $obj->update();
 
-        return redirect()->route('admin.admin_data_wisata')->with('success', 'Slide is updated successfully.');
+
+        if ($request->has('imgheader')) {
+            $file_hdr = $request->file('imgheader');
+            $extention_hdr = $file_hdr->getClientOriginalExtension();
+            $ext_hdr = time() . '.' . $extention_hdr;
+
+            $final_hdr = 'uploads/';
+            $file_hdr->move($final_hdr, $ext_hdr);
+
+            if (File::exists($datawisatas->imgheader)) {
+                File::delete($datawisatas->imgheader);
+            }
+        }
+
+        $datawisatas->update([
+            'title' => $request->title,
+            'image' => $final_name . $ext,
+            'deskripsi' => $request->deskripsi,
+            'readmore' => $request->readmore,
+            'imgheader' => $final_hdr . $ext_hdr,
+            'alamat' => $request->alamat,
+        ]);
+
+        return redirect()->route('admin.data-wisata')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -149,17 +177,18 @@ class DataWisataController extends Controller
     {
         //
 
-        $dt_wisata = DataWisata::where('id', $id)->first();
-        $image_path = public_path('uploads/' . $dt_wisata->image);
-        $image_hdr = public_path('uploads/' . $dt_wisata->imgheader);
-        // unlink(public_path('uploads/' . $dt_wisata->image,));
-        // unlink(public_path('uploads/' . $dt_wisata->imgheader));
-        if (file_exists($image_path or $image_hdr)) {
-            Storage::delete($image_path or $image_hdr);
+        $datawisatas = DataWisata::where('id', $id)->first();
+
+        if (File::exists($datawisatas->image)) {
+            File::delete($datawisatas->image);
         }
 
-        $dt_wisata->delete();
+        if (File::exists($datawisatas->imgheader)) {
+            File::delete($datawisatas->imgheader);
+        }
 
-        return redirect()->back()->with('success', 'Slide is updated successfully.');
+        $datawisatas->delete();
+
+        return redirect()->route('admin.data-wisata')->with('success', 'Data Berhasil Ditambahkan');
     }
 }

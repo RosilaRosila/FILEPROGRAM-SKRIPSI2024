@@ -28,6 +28,16 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function detail($id)
+    {
+        // $blog_post = [];
+        $title = "INFO WISATA";
+        return view('halaman-pengunjung.infowisata-detail', [
+            'title' => $title,
+            'datawisatas' => DataWisata::where('id', $id)->first()
+        ]);
+    }
+
     public function tiket()
     {
         // $blog_post = [];

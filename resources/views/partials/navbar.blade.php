@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5f9ea0;">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #5f9ea0;">
     <a class="navbar-brand" href="http://127.0.0.1:8000/" style="font-size: 3vh; ">
         <img src="{{ asset('/') }}assets/img/logokp.png" width="40" height="40" class="d-inline-block align-top" alt="">
         <span style="font-size: 2.5vh; font-weight:bold;">WISATA KABUPATEN PANGANDARAN</span>

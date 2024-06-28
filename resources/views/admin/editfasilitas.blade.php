@@ -85,19 +85,25 @@
                         <br>
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="m-0 text-dark" style="font-weight: bold;">Tambah Fasilitas</h5>
+                                <h5 class="m-0 text-dark" style="font-weight: bold;">Edit Fasilitas</h5>
                             </div>
                             <div class="card-body">
                                 <br>
-                                <form action="{{ route('admin.admin_fasilitas_store') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('admin.admin_fasilitas_update', $datafasilitas->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="txtimage" class="form-label" style=" font-weight:normal">Tambahkan Gambar Icon Fasilitas</label>
+                                        <label class="form-label" style=" font-weight:normal">Gambar Icon Fasilitas</label>
+                                        <div class="form-control" style="height: 70px;">
+                                            <img src="{{ asset($datafasilitas->imgicon) }}" alt="" height="50px">
+                                        </div>
+                                    </div>
+                                    <div class="mb-5">
+                                        <label for="txtimage" class="form-label" style=" font-weight:normal">Tambahkan Gambar Icon Fasilitas Baru</label>
                                         <input type="file" name="imgicon" id="txtimage" class="form-control">
                                     </div>
                                     <div class="mt-5">
                                         <label for="txtname" class="form-label" style=" font-weight:normal">Masukan Nama Fasilitas</label>
-                                        <input type="text" class="form-control" id="txtname" name="namaicon" value=" {{ old('namaicon') }}">
+                                        <input type="text" class="form-control" id="txtname" name="namaicon" value=" {{ $datafasilitas->namaicon }}">
                                     </div>
                                     <br>
                                     <br>
@@ -106,25 +112,28 @@
                                     </a>
                                     <button type="submit" class="btn btn-primary">Simpan Data</button>
                                 </form>
-
-                                <br>
-                                <br>
                             </div>
+
+
+
+                            <br>
+                            <br>
                         </div>
-                        </section>
                     </div>
-                </div><!-- /.container-fluid -->
+                    </section>
+                </div>
+            </div><!-- /.container-fluid -->
 
-            </div>
-            <!-- /.content-header -->
-
-            <!-- Main content -->
-
-            <br>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+
         <br>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <br>
     </div>
     <br>
     <!-- /.content-wrapper -->

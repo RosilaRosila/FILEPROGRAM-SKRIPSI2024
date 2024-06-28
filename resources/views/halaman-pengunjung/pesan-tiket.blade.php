@@ -1,6 +1,7 @@
 @extends('layouts.dashboardinfo')
 @section('container')
 
+<br>
 <div class="container">
 
     <div class="card o-hidden border-0  my-5">

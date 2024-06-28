@@ -1,6 +1,9 @@
 @extends('layouts.dashboard')
 @section('container')
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<br>
+<br>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide mt-3" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="{{ asset('/') }}assets/img/image-header-1.png" class="d-block w-100" alt="...">

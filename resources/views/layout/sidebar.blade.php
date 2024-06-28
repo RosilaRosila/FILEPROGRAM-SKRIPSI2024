@@ -43,7 +43,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="http://127.0.0.1:8000/admin/data-fasilitas" class="nav-link {{ ($title === "FASILITAS") ? 'active' : '' }} ">
+                    <a href="http://127.0.0.1:8000/admin/data-fasilitas " class="nav-link {{ ($title === "FASILITAS") ? 'active' : '' }} ">
                         <i class="nav-icon fa fa-list-alt"></i>
                         <p>
                             Fasilitas
@@ -61,7 +61,7 @@
                 </li> -->
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link  ">
+                    <a href="http://127.0.0.1:8000/admin/data-tiket" class="nav-link {{ ($title === "DATA TIKET") ? 'active' : '' }} ">
                         <i class="nav-icon  fas fa-wallet"></i>
                         <p>
                             Harga Tiket

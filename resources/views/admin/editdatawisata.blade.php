@@ -98,9 +98,8 @@
                                     <div class="mt-5">
                                         <label class="form-label" style=" font-weight:normal">Existing Gambar Profil Tempat Wisata</label>
                                         <div class="form-control" style="height: 70px;">
-                                            <img src="{{ asset('uploads/'.$datawisatas->image) }}" alt="" height="50px">
+                                            <img src="{{ asset($datawisatas->image) }}" alt="" height="50px">
                                         </div>
-
                                     </div>
                                     <div class="mt-5">
                                         <label for="txtimage" class="form-label" style=" font-weight:normal">Change Gambar Profil Tempat Wisata</label>
@@ -117,7 +116,7 @@
                                     <div class="mt-5">
                                         <label class="form-label" style=" font-weight:normal">Existing Gambar Header Tempat Wisata</label>
                                         <div class="form-control" style="height: 70px;">
-                                            <img src="{{ asset('uploads/'.$datawisatas->imgheader) }}" alt="" height="50px">
+                                            <img src="{{ asset($datawisatas->imgheader) }}" alt="" height="50px">
                                         </div>
                                     </div>
                                     <div class="mt-5">
@@ -130,7 +129,7 @@
                                     </div>
                                     <br>
                                     <br>
-                                    <a class="btn btn-danger " href="{{ route('admin.admin_data_wisata') }}" style="color: white;">
+                                    <a class="btn btn-danger " href="{{ route('admin.data-wisata') }}" style="color: white;">
                                         Kembali
                                     </a>
                                     <button type="submit" class="btn btn-primary">Update Data</button>

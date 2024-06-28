@@ -191,7 +191,7 @@
                             <!-- <button type="button" class="btn btn-sm btn-primary">
                                 <i class="fas fa-plus-circle"></i>Tambah Data
                             </button> -->
-                            <a class="btn btn-primary " href="{{ route('admin.admin_add_fasilitas') }}">
+                            <a class="btn btn-primary " href="{{ route('admin.admin_fasilitas_create') }}">
                                 <i class=" nav-icon fas fa-plus-circle"></i>&nbsp Tambah Fasilitas
                             </a>
                         </div>
@@ -207,17 +207,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if($fasilitas->count() > 0)
-                                    @foreach($fasilitas as $fs)
+                                    @if($datafasilitas->count() > 0)
+                                    @foreach($datafasilitas as $fs)
                                     <tr>
-                                        <th>{{ $loop->iteration }}</th>
-                                        <td>
-                                            <img src="{{ asset('icons/'.$fs->image) }}" alt="" height="50px">
-                                        </td>
-                                        <td>{{ $fs->title }}</td>
+                                        <th style="text-align: center;">{{ $loop->iteration + ($datafasilitas->currentPage() - 1) * $datafasilitas->perPage() }}</th>
                                         <td style="text-align: center;">
-                                            <a href="" class=" btn btn-warning">Edit</a>
-                                            <a href="" class="btn btn-danger">Delete</a>
+                                            <img src="{{ asset($fs->imgicon) }}" alt="" height="30px">
+                                        </td>
+                                        <td>{{ $fs->namaicon }}</td>
+                                        <td style="text-align: center;">
+                                            <a href="{{ route('admin.admin_fasilitas_edit', $fs->id) }}" class=" btn btn-warning btn-sm" style="color: white;">
+                                                <i class="far fa-edit">&nbsp Edit</i>
+                                            </a>
+                                            <a href="{{ route('admin.admin_fasilitas_delete', $fs->id) }}" class="btn btn-danger btn-sm">
+                                                <i class="far fa-trash-alt">&nbsp Delete</i>
+                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -226,14 +230,22 @@
                                         <td class="text-center" colspan="4">Data Belum Tersedia</td>
                                     </tr>
                                     @endif
-
                                 </tbody>
-                                <!-- 
-                                <tr>
-                                    <td colspan="8">Tidak Ada Data</td>
-                                </tr> -->
                             </table>
-
+                            <div>
+                                <div class="float-left" style="font-size: 12px; font-weight:bold">
+                                    Showing
+                                    {{ $datafasilitas->firstItem() }}
+                                    to
+                                    {{ $datafasilitas->lastItem() }}
+                                    of
+                                    {{ $datafasilitas->total() }}
+                                    entries
+                                </div>
+                                <div class="float-right">
+                                    {{ $datafasilitas->links() }}
+                                </div>
+                            </div>
                         </section>
                     </div>
                 </div><!-- /.container-fluid -->

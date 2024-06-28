@@ -201,48 +201,13 @@
                                 <thead class="table-primary">
                                     <tr style="text-align: center;">
                                         <th style="font-size: 12px;">No</th>
-                                        <th style="font-size: 12px;">Nama Wisata</th>
-                                        <th style="font-size: 12px; ">Image</th>
-                                        <th style="font-size: 12px; width:150px">Deskripsi</th>
-                                        <th style="font-size: 12px; width:150px">Read More</th>
-                                        <th style="font-size: 12px;">Image Header</th>
-                                        <th style="font-size: 12px; width:30px">Alamat</th>
-                                        <th style="font-size: 12px; width:210px">Action</th>
+                                        <th style="font-size: 12px;">Nama Tempat Wisata</th>
+                                        <th style="font-size: 12px; ">Harga Tiket</th>
+                                        <th style="font-size: 12px; width:190px">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if($datawisatas->count() > 0)
-                                    @foreach($datawisatas as $dwisata)
-                                    <tr>
-                                        <th style="font-size: 10px; text-align:center">{{ $loop->iteration + ($datawisatas->currentPage() - 1) * $datawisatas->perPage() }}</th>
-                                        <td style="font-size: 10px;">{{ $dwisata->title }}</td>
-                                        <td>
-                                            <img src="{{ asset($dwisata->image) }}" alt="" height="50px">
-                                        </td>
-                                        <td style="font-size: 10px;">{{ $dwisata->deskripsi }}</td>
-                                        <td style="font-size: 10px;">{{ $dwisata->readmore }}</td>
-                                        <td>
-                                            <img src="{{ asset($dwisata->imgheader) }}" alt="" height="20px">
-                                        </td>
-                                        <td style="font-size: 10px;">{{ $dwisata->alamat }}</td>
-                                        <td style="text-align: center">
-                                            <a href="{{ route('admin.admin_editdatawisata', $dwisata->id) }}" class=" btn btn-warning btn-sm" style="font-size:9px; color:white">
-                                                <i class="far fa-edit">&nbsp Edit</i>
-                                            </a>
-                                            <a href="{{ route('admin.admin_deletedatawisata', $dwisata->id) }}" class="btn btn-danger btn-sm" style="font-size:9px">
-                                                <i class="far fa-trash-alt">&nbsp Delete</i>
-                                            </a>
-                                            <a href="" class="btn btn-success btn-sm" style="font-size:9px">
-                                                <i class="fas fa-table">&nbsp Fasilitas</i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    @else
-                                    <tr>
-                                        <td class="text-center" colspan="7">Data Belum Tersedia</td>
-                                    </tr>
-                                    @endif
+
 
                                 </tbody>
                                 <!-- 
@@ -250,20 +215,7 @@
                                     <td colspan="8">Tidak Ada Data</td>
                                 </tr> -->
                             </table>
-                            <div>
-                                <div class="float-left" style="font-size: 12px; font-weight:bold">
-                                    Showing
-                                    {{ $datawisatas->firstItem() }}
-                                    to
-                                    {{ $datawisatas->lastItem() }}
-                                    of
-                                    {{ $datawisatas->total() }}
-                                    entries
-                                </div>
-                                <div class="float-right">
-                                    {{ $datawisatas->links() }}
-                                </div>
-                            </div>
+
                         </section>
                     </div>
                 </div><!-- /.container-fluid -->

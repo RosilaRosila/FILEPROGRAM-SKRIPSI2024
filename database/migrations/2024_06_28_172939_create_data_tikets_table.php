@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('data_tikets', function (Blueprint $table) {
             $table->id();
+            $table->text('namawst');
+            $table->text('harga');
             $table->timestamps();
         });
     }

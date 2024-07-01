@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataTiketController;
 use App\Http\Controllers\DataWisataController;
 use App\Http\Controllers\FasilitasController;
 
@@ -70,6 +71,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], 
     // Route::post('/datawisata/update/{id}', 'DataWisataController@update');
     Route::post('/datawisata/update/{id}', [DataWisataController::class, 'update'])->name('admin_updatedatawisata');
     Route::resource('datawisata', DataWisataController::class);
+
+
+    /* ------------ Create, Read, Update & Delete Data Tiket Wisata ------------ */
+    Route::resource('datatiket', DataTiketController::class);
+    Route::get('/datatiket/create', [DataTiketController::class, 'create'])->name('admin_datatiket_create');
+    Route::post('/datatiket/store', [DataTiketController::class, 'store'])->name('admin_datatiket_store');
+    Route::get('/datatiket/edit/{id}', [DataTiketController::class, 'edit'])->name('admin_datatiket_edit');
+    Route::post('/datatiket/update/{id}', [DataTiketController::class, 'update'])->name('admin_datatiket_update');
+    Route::get('/datatiket/delete/{id}', [DataTiketController::class, 'delete'])->name('admin_datatiket_delete');
 });
 
 

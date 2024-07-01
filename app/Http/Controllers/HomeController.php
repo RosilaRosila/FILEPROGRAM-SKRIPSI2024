@@ -57,6 +57,7 @@ class HomeController extends Controller
         $title = "DATA TIKET";
         return view('data-tiket', [
             'title' => $title,
+            'datatikets' => DB::table('data_tikets')->paginate(5)
         ]);
     }
 }

@@ -184,14 +184,14 @@
                 <!-- Content Header (Page header) -->
                 <div class="content-header">
                     <div class="container-fluid">
-                        <h4 class="m-0 text-dark">Kelola Data Wisata</h4>
+                        <h4 class="m-0 text-dark">Kelola Data Tiket</h4>
                         <br>
                         <br>
                         <div class="text-end mb-5">
                             <!-- <button type="button" class="btn btn-sm btn-primary">
                                 <i class="fas fa-plus-circle"></i>Tambah Data
                             </button> -->
-                            <a class="btn btn-primary " href="{{ route('admin.admin_addatawisata') }}">
+                            <a class="btn btn-primary " href="{{ route('admin.admin_datatiket_create') }}">
                                 <i class=" nav-icon fas fa-plus-circle"></i>&nbsp Tambah Data
                             </a>
                         </div>
@@ -200,22 +200,50 @@
                             <table class="table table-hover table-bordered">
                                 <thead class="table-primary">
                                     <tr style="text-align: center;">
-                                        <th style="font-size: 12px;">No</th>
-                                        <th style="font-size: 12px;">Nama Tempat Wisata</th>
-                                        <th style="font-size: 12px; ">Harga Tiket</th>
-                                        <th style="font-size: 12px; width:190px">Action</th>
+                                        <th>No</th>
+                                        <th>Nama Tempat Wisata</th>
+                                        <th>Harga Tiket</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-
-
+                                    @if($datatikets->count() > 0)
+                                    @foreach($datatikets as $dt)
+                                    <tr>
+                                        <th style="text-align: center;">{{ $loop->iteration + ($datatikets->currentPage() - 1) * $datatikets->perPage() }}</th>
+                                        <td>{{ $dt->namawst}}</td>
+                                        <td style="text-align: center;">{{ $dt->harga }}</td>
+                                        <td style="text-align: center;">
+                                            <a href="{{ route('admin.admin_datatiket_edit', $dt->id) }}" class=" btn btn-warning btn-sm" style="color: white;">
+                                                <i class="far fa-edit">&nbsp Edit</i>
+                                            </a>
+                                            <a href="{{ route('admin.admin_datatiket_delete', $dt->id) }}" class="btn btn-danger btn-sm">
+                                                <i class="far fa-trash-alt">&nbsp Delete</i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    @else
+                                    <tr>
+                                        <td class="text-center" colspan="4">Data Belum Tersedia</td>
+                                    </tr>
+                                    @endif
                                 </tbody>
-                                <!-- 
-                                <tr>
-                                    <td colspan="8">Tidak Ada Data</td>
-                                </tr> -->
                             </table>
-
+                            <div>
+                                <div class="float-left" style="font-size: 12px; font-weight:bold">
+                                    Showing
+                                    {{ $datatikets->firstItem() }}
+                                    to
+                                    {{ $datatikets->lastItem() }}
+                                    of
+                                    {{ $datatikets->total() }}
+                                    entries
+                                </div>
+                                <div class="float-right">
+                                    {{ $datatikets->links() }}
+                                </div>
+                            </div>
                         </section>
                     </div>
                 </div><!-- /.container-fluid -->

@@ -233,7 +233,7 @@
                                                 <i class="far fa-trash-alt">&nbsp Delete</i>
                                             </a>
                                             <a href="" class="btn btn-success btn-sm" style="font-size:9px">
-                                                <i class="fas fa-table">&nbsp Fasilitas</i>
+                                                <i class="fas fa-info-circle">&nbsp Detail</i>
                                             </a>
                                         </td>
                                     </tr>

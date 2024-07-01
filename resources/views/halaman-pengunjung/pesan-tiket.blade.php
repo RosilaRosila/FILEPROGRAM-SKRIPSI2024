@@ -20,11 +20,11 @@
                         <br>
                         <form class="user">
                             <div class="form-group">
-                                <label for="txtname" class="form-label">Masukan Nama Lengkap Anda</label>
+                                <label for="txtname" class="form-label">Masukan Nama Lengkap Anda (Enter your full name)</label>
                                 <input type="text" class="form-control form-control" id="txtname" placeholder="Nama Lengkap" name="name">
                             </div>
                             <div class="form-group">
-                                <label for="txttiket" class="form-label">Pilih Tiket Wisata</label>
+                                <label for="txttiket" class="form-label">Pilih Tiket Wisata (choose your tour ticket)</label>
                                 <select name="tiket" class="form-control" id="txttiket">
                                     <option value="" selected>Tiket Wisata</option>
                                     <option value="1">1. Pantai Pangandaran</option>
@@ -32,13 +32,26 @@
                                     <option value="3">3. Bus</option>
                                 </select>
                             </div>
-                            <div class="form-group row">
+                            <div class="form-group">
+                                <label for="txtjumlah" class="form-label">Masukan Jumlah Orang (Enter the number of people)</label>
+                                <input type="number" class="form-control" id="txtjumlah" placeholder="Jumlah Orang" name="txtjumlah">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtkendaraan" class="form-label">Pilih Jenis Kendaraan (select your vehicle type)</label>
+                                <select name="kendaraan" class="form-control" id="txtkendaraan">
+                                    <option value="" selected>Kendaraan</option>
+                                    <option value="1">1. Motor</option>
+                                    <option value="2">2. Mobil</option>
+                                    <option value="3">3. Bus</option>
+                                </select>
+                            </div>
+                            <!-- <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <label for="txtjumlah" class="form-label">Masukan Jumlah Orang</label>
+                                    <label for="txtjumlah" class="form-label">Masukan Jumlah Orang (Enter the number of people)</label>
                                     <input type="number" class="form-control" id="txtjumlah" placeholder="Jumlah Orang" name="txtjumlah">
                                 </div>
                                 <div class="col-sm-6">
-                                    <label for="txtkendaraan" class="form-label">Pilih Jenis Kendaraan</label>
+                                    <label for="txtkendaraan" class="form-label">Pilih Jenis Kendaraan (select your vehicle type)</label>
                                     <select name="kendaraan" class="form-control" id="txtkendaraan">
                                         <option value="" selected>Kendaraan</option>
                                         <option value="1">1. Motor</option>
@@ -47,13 +60,13 @@
                                     </select>
 
                                 </div>
-                            </div>
-                            <div class="form-group">
+                            </div> -->
+                            <!-- <div class="form-group">
                                 <label for="txtplat" class="form-label">Masukan Plat Kendaraan Anda</label>
                                 <input type="text" class="form-control form-control" id="txtplat" placeholder="Z 1234 UC" name="txtplat">
-                            </div>
+                            </div> -->
                             <div class="form-group mt-4">
-                                <label for="txttanggal" class="form-label">Masukan Tanggal Liburan (Kunjungan)</label>
+                                <label for="txttanggal" class="form-label">Masukan Tanggal Liburan/Kunjungan (Enter the date of your visit)</label>
                                 <input type="date" name="tgl" class="form-control" id="txttanggal">
                             </div>
                             <br>
